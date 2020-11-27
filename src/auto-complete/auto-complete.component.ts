@@ -175,7 +175,6 @@ export class AutoCompleteComponent implements AfterViewChecked, ControlValueAcce
     }
   }
 
-  @Input()
   get model():any|any[] {
     let model = this.selected;
     if (!this.multi && typeof this.selected.length !== 'undefined') {
@@ -189,6 +188,7 @@ export class AutoCompleteComponent implements AfterViewChecked, ControlValueAcce
     return model;
   }
 
+  @Input()
   set model(selected:any|any[]) {
     if (typeof selected !== 'undefined' && selected !== null) {
       this.selected = selected;
@@ -197,11 +197,11 @@ export class AutoCompleteComponent implements AfterViewChecked, ControlValueAcce
     }
   }
 
-  @Input()
   public get showList():boolean {
     return this.showSuggestions;
   }
 
+  @Input()
   public set showList(value:boolean) {
     if (typeof value === 'undefined') {
       return;
